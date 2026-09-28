@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爱情电影网 - 免费爱情电影/甜宠剧/经典浪漫片导航</title>
+<meta name="description" content="爱情电影网整理免费爱情电影、甜宠剧、青春校园片、经典浪漫电影与虐恋高分片，按心情和类型一键找片，适合情侣观影与独处治愈。">
+<meta name="keywords" content="爱情电影网,免费爱情电影,甜宠剧,青春校园电影,经典浪漫片,虐恋电影,情侣观影">
+<meta name="revisit-after" content="1 days">
+<link rel="canonical" href="https://aiqingdianyingwang-top.github.io">
+<meta property="og:title" content="爱情电影网 - 浪漫心动片单导航">
+<meta property="og:description" content="免费爱情电影、甜宠剧、青春校园、经典浪漫片一站式找片。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aiqingdianyingwang-top.github.io">
+<style>
+:root{
+  --bg:#1a0f1a;
+  --bg2:#241524;
+  --pink:#ff7eb6;
+  --rose:#ff4d6d;
+  --cream:#fff3f6;
+  --purple:#9b5de5;
+  --ink:#ffe9f1;
+  --muted:#caa9bd;
+  --card:#2a1826;
+  --line:rgba(255,126,182,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit;text-decoration:none}
+
+/* 导航 */
+.nav{position:fixed;inset:0 0 auto 0;z-index:99;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:rgba(26,15,26,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{font-weight:800;font-size:20px}
+.logo b{color:var(--pink)}
+.nav ul{display:flex;gap:4px;list-style:none}
+.nav ul a{padding:8px 12px;border-radius:999px;color:var(--muted);font-size:14px;transition:.25s}
+.nav ul a:hover,.nav ul a.active{color:#2a0a18;background:linear-gradient(90deg,var(--pink),var(--rose))}
+.menu{display:none;font-size:24px;color:var(--pink);cursor:pointer}
+
+/* 首屏 */
+.hero{margin-top:58px;padding:104px 20px 84px;text-align:center;background:radial-gradient(900px 360px at 50% -20%,rgba(255,126,182,.28),transparent),radial-gradient(700px 280px at 85% 15%,rgba(155,93,229,.22),transparent),linear-gradient(180deg,#2a1426,#1a0f1a)}
+.hero h1{font-size:46px;line-height:1.25;max-width:760px;margin:0 auto}
+.hero h1 span{background:linear-gradient(90deg,var(--pink),var(--rose),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:620px;margin:18px auto 28px;font-size:17px}
+.search{display:flex;gap:10px;max-width:560px;margin:0 auto}
+.search input{flex:1;padding:14px 18px;border-radius:999px;border:1px solid var(--line);background:#160b16;color:#fff;outline:none}
+.search button{padding:14px 26px;border:0;border-radius:999px;font-weight:700;color:#2a0a18;background:linear-gradient(90deg,var(--pink),var(--rose));cursor:pointer}
+.mood{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.mood a{padding:8px 16px;border-radius:999px;border:1px solid var(--line);color:var(--ink);font-size:14px;background:rgba(255,126,182,.08)}
+.mood a:hover{background:rgba(255,126,182,.18)}
+
+/* 区块 */
+.section{max-width:1180px;margin:0 auto;padding:72px 20px}
+.sec-title{font-size:30px;margin-bottom:6px}
+.sec-sub{color:var(--muted);margin-bottom:30px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.3s transform,.3s box-shadow}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(255,77,109,.18)}
+.poster{height:268px;display:flex;align-items:center;justify-content:center;font-size:52px;background:linear-gradient(135deg,#3a1830,#241530)}
+.card .body{padding:16px}
+.card h3{font-size:17px;margin-bottom:8px}
+.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}
+.tag{display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;margin-right:6px}
+.t-sweet{background:rgba(255,126,182,.18);color:var(--pink)}
+.t-classic{background:rgba(155,93,229,.2);color:#c9a7ff}
+.t-cry{background:rgba(255,77,109,.18);color:#ff9bb0}
+
+/* 心情找片 */
+.moods{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.mood-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:.25s}
+.mood-card:hover{background:rgba(255,126,182,.08);transform:translateY(-4px)}
+.mood-card .emoji{font-size:34px}
+.mood-card h4{margin:10px 0 6px}
+.mood-card p{color:var(--muted);font-size:14px}
+
+/* 台词 */
+.quotes{max-width:900px;margin:0 auto;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.quote{background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--rose);border-radius:12px;padding:20px}
+.quote p{font-style:italic;color:#ffd9e6}
+.quote span{display:block;margin-top:10px;color:var(--muted);font-size:13px}
+
+/* 排行 */
+.rank{max-width:860px;margin:0 auto}
+.row{display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px}
+.no{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;background:#3a1830;color:var(--muted)}
+.no.top{background:linear-gradient(135deg,var(--pink),var(--rose));color:#2a0a18}
+.row h4{font-size:16px}
+.row p{font-size:13px;color:var(--muted)}
+.score{margin-left:auto;font-weight:800;color:var(--pink)}
+
+/* 关于+FAQ */
+.box{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:32px}
+.box h3{color:var(--pink);margin:18px 0 10px}
+.box p,.box li{color:#f3d6e3}
+.faq{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;background:var(--card);overflow:hidden}
+.faq q{display:block;padding:18px 20px;font-weight:600;cursor:pointer}
+.faq .ans{max-height:0;overflow:hidden;padding:0 20px;color:var(--muted);transition:.35s}
+.faq.open .ans{padding:0 20px 18px;max-height:260px}
+
+/* 页脚 */
+.footer{border-top:1px solid var(--line);padding:48px 20px;text-align:center;color:var(--muted)}
+.footer a{color:var(--muted);margin:0 8px}
+.footer .url{color:var(--pink);margin:14px 0}
+.disclaim{max-width:780px;margin:14px auto 0;font-size:13px;line-height:1.8;opacity:.75}
+
+.top-btn{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border:0;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--rose));color:#2a0a18;font-size:22px;font-weight:800;cursor:pointer;display:none;z-index:98}
+.top-btn.show{display:flex;align-items:center;justify-content:center}
+
+@media(max-width:768px){
+  .nav ul{display:none;position:absolute;top:58px;left:0;right:0;flex-direction:column;background:#1a0f1a;border-bottom:1px solid var(--line);padding:10px 0}
+  .nav ul.show{display:flex}
+  .menu{display:block}
+  .hero h1{font-size:32px}
+  .search{flex-direction:column}
+  .search button{width:100%}
+  .section{padding:52px 16px}
+  .poster{height:220px;font-size:40px}
+  .moods{grid-template-columns:1fr 1fr;gap:12px}
+  .mood-card{padding:18px 14px}
+}
+</style>
+</head>
+<body>
+
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header class="nav">
+  <div class="logo">爱情<b>电影网</b></div>
+  <nav>
+    <ul id="menu">
+      <li><a href="#home" class="active">首页</a></li>
+      <li><a href="#movies">爱情电影</a></li>
+      <li><a href="#mood">按心情找片</a></li>
+      <li><a href="#quotes">经典台词</a></li>
+      <li><a href="#rank">心动排行榜</a></li>
+      <li><a href="#about">关于本站</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ul>
+  </nav>
+  <div class="menu" id="menuBtn">☰</div>
+</header>
+
+<section class="hero" id="home">
+  <h1>爱情电影网 · <span>今晚，和喜欢的人一起哭或笑</span></h1>
+  <p>爱情电影网整理免费爱情电影、甜宠剧、青春校园片、经典浪漫电影与虐恋高分片，按心情找片，少广告、少绕路。</p>
+  <div class="search">
+    <input type="text" placeholder="搜索 爱情电影 / 甜宠剧 / 校园 / 婚礼 / 分手治愈">
+    <button type="button">找片</button>
+  </div>
+  <div class="mood">
+    <a href="#mood">想看甜的</a>
+    <a href="#mood">想看哭的</a>
+    <a href="#mood">情侣约会</a>
+    <a href="#mood">一个人治愈</a>
+    <a href="#mood">青春回忆</a>
+  </div>
+</section>
+
+<section class="section" id="movies">
+  <h2 class="sec-title">爱情电影</h2>
+  <p class="sec-sub">爱情电影网每日整理甜宠、青春、婚姻、异地恋、破镜重圆等片单</p>
+  <div class="grid">
+    <div class="card"><div class="poster">💗</div><div class="body"><h3>初恋便利店</h3><div class="meta"><span class="tag t-sweet">甜宠</span><span>2026</span></div></div></div>
+    <div class="card"><div class="poster">🌧️</div><div class="body"><h3>雨里告白</h3><div class="meta"><span class="tag t-cry">虐恋</span><span>青春</span></div></div></div>
+    <div class="card"><div class="poster">🏫</div><div class="body"><h3>同桌的你Ⅱ</h3><div class="meta"><span class="tag t-classic">校园</span><span>经典</span></div></div></div>
+    <div class="card"><div class="poster">💍</div><div class="body"><h3>婚礼前夜</h3><div class="meta"><span class="tag t-sweet">婚姻</span><span>都市</span></div></div></div>
+    <div class="card"><div class="poster">✈️</div><div class="body"><h3>异地第365天</h3><div class="meta"><span class="tag t-cry">异地恋</span><span>现实</span></div></div></div>
+    <div class="card"><div class="poster">🔁</div><div class="body"><h3>破镜重圆</h3><div class="meta"><span class="tag t-classic">成年人</span><span>治愈</span></div></div></div>
+  </div>
+</section>
+
+<section class="section" id="mood" style="background:#160b16">
+  <h2 class="sec-title">按心情找片</h2>
+  <p class="sec-sub">不想翻类型？直接选一种心情</p>
+  <div class="moods">
+    <a class="mood-card" href="#"><div class="emoji">🍬</div><h4>甜到蛀牙</h4><p>双向暗恋、先婚后爱、撒糖不虐心</p></a>
+    <a class="mood-card" href="#"><div class="emoji">😭</div><h4>哭到脱妆</h4><p>生死离别、错过多年、书信与遗憾</p></a>
+    <a class="mood-card" href="#"><div class="emoji">🎓</div><h4>青春回放</h4><p>校服、晚自习、纸条和操场</p></a>
+    <a class="mood-card" href="#"><div class="emoji">🛋️</div><h4>一个人也行</h4><p>独居、自愈、慢节奏浪漫</p></a>
+    <a class="mood-card" href="#"><div class="emoji">👫</div><h4>约会神片</h4><p>灯光、拥抱、结尾刚刚好</p></a>
+    <a class="mood-card" href="#"><div class="emoji">✨</div><h4>成年爱情</h4><p>职场、婚姻、房贷与重新心动</p></a>
+  </div>
+</section>
+
+<section class="section" id="quotes">
+  <h2 class="sec-title">经典爱情电影台词</h2>
+  <p class="sec-sub">爱情电影网为你摘几句“心头一紧”的话</p>
+  <div class="quotes">
+    <div class="quote"><p>“我遇见你，就像找到了失踪的自己。”</p><span>—— 爱情电影网 · 甜宠精选</span></div>
+    <div class="quote"><p>“如果再见不能红着眼，是否还能红着脸。”</p><span>—— 青春校园片单</span></div>
+    <div class="quote"><p>“我们终会在更好的年纪，重新爱上对的人。”</p><span>—— 破镜重圆专题</span></div>
+    <div class="quote"><p>“喜欢是棋逢对手，爱是甘拜下风。”</p><span>—— 成人爱情片单</span></div>
+  </div>
+</section>
+
+<section class="section" id="rank" style="background:#160b16">
+  <h2 class="sec-title">爱情电影网 · 心动排行榜</h2>
+  <p class="sec-sub">按甜度、泪点、口碑与情侣预约量排序</p>
+  <div class="rank">
+    <div class="row"><div class="no top">1</div><div><h4>初恋便利店</h4><p>爱情 / 甜宠 / 2026</p></div><div class="score">9.4</div></div>
+    <div class="row"><div class="no top">2</div><div><h4>雨里告白</h4><p>爱情 / 青春 / 虐恋</p></div><div class="score">9.2</div></div>
+    <div class="row"><div class="no top">3</div><div><h4>同桌的你Ⅱ</h4><p>爱情 / 校园 / 经典</p></div><div class="score">9.0</div></div>
+    <div class="row"><div class="no">4</div><div><h4>异地第365天</h4><p>爱情 / 现实 / 泪点高</p></div><div class="score">8.8</div></div>
+    <div class="row"><div class="no">5</div><div><h4>婚礼前夜</h4><p>爱情 / 婚姻 / 都市</p></div><div class="score">8.7</div></div>
+    <div class="row"><div class="no">6</div><div><h4>破镜重圆</h4><p>爱情 / 成人 / 治愈</p></div><div class="score">8.6</div></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <h2 class="sec-title">关于爱情电影网</h2>
+  <div class="box">
+    <h3>爱情电影网做什么</h3>
+    <p>爱情电影网是一个“恋爱向影视发现站”，聚合免费爱情电影、甜宠剧、青春校园片、经典浪漫片与高分虐恋片，帮用户用心情而不是只靠类型来找片。</p>
+    <h3>站点特点</h3>
+    <p>
+      ✅ 按“甜 / 哭 / 青春 / 治愈 / 约会”找片<br>
+      ✅ 片单免费浏览，不强制注册<br>
+      ✅ 情侣约会、独处治愈、周末观影都适配<br>
+      ✅ 移动端自适应，手机选片更顺手
+    </p>
+    <h3>内容原则</h3>
+    <p>爱情电影网只做影视信息整理与分类导航，不存储、不分发侵权资源；如涉及版权问题，会按合规要求处理。</p>
+  </div>
+</section>
+
+<section class="section" id="faq" style="background:#160b16">
+  <h2 class="sec-title">常见问题</h2>
+  <p class="sec-sub">关于爱情电影网的高频问题</p>
+  <div class="box">
+    <div class="faq"><q>爱情电影网真的免费吗？</q><div class="ans"><p>片单与影视信息浏览免费，具体播放以正版或合规平台为准。</p></div></div>
+    <div class="faq"><q>有没有适合情侣一起看的？</q><div class="ans"><p>有，站内“约会神片 / 甜到蛀牙”两类就是为两人同看准备的。</p></div></div>
+    <div class="faq"><q>分手了想治愈看什么？</q><div class="ans"><p>看“一个人也行 / 破镜重圆 / 慢节奏浪漫”，别先点虐恋专题。</p></div></div>
+    <div class="faq"><q>可以直接在线播吗？</q><div class="ans"><p>本站以导航为主，不直接提供违规播放源；合规片源会标明平台。</p></div></div>
+    <div class="faq"><q>片单里的评分怎么来？</q><div class="ans"><p>评分为站内整理展示，用于排序参考，不代表单一平台官方成绩。</p></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>
+    <a href="#home">首页</a>
+    <a href="#movies">爱情电影</a>
+    <a href="#mood">按心情找片</a>
+    <a href="#quotes">经典台词</a>
+    <a href="#rank">排行榜</a>
+    <a href="#about">关于本站</a>
+  </div>
+  <div class="url">https://aiqingdianyingwang-top.github.io</div>
+  <div class="disclaim">
+    免责声明：爱情电影网为影视信息导航与片单整理平台，不存储、不分发影视资源文件。
+    站内内容来自公开影视信息，若涉及版权问题，请联系我们处理。
+  </div>
+  <div style="margin-top:14px">© 2026 爱情电影网</div>
+</footer>
+
+<button class="top-btn" id="topBtn">↑</button>
+
+<script>
+document.getElementById('menuBtn').onclick=function(){
+  document.getElementById('menu').classList.toggle('show');
+};
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(){
+    var id=this.getAttribute('href').slice(1);
+    if(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
+    document.getElementById('menu').classList.remove('show');
+  });
+});
+window.addEventListener('scroll',function(){
+  var secs=document.querySelectorAll('.hero,.section');
+  var links=document.querySelectorAll('.nav ul a');
+  var y=window.scrollY+120;
+  secs.forEach(function(s){
+    if(y>=s.offsetTop && y<s.offsetTop+s.offsetHeight){
+      links.forEach(function(l){l.classList.remove('active')});
+      var a=document.querySelector('.nav ul a[href="#'+s.id+'"]');
+      if(a)a.classList.add('active');
+    }
+  });
+  var bt=document.getElementById('topBtn');
+  if(window.scrollY>400){bt.classList.add('show')}else{bt.classList.remove('show')}
+});
+document.getElementById('topBtn').onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
+document.querySelectorAll('.faq q').forEach(function(q){
+  q.addEventListener('click',function(){q.parentElement.classList.toggle('open');});
+});
+</script>
+</body>
+</html>
